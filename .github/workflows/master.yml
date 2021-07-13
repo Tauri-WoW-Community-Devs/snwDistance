@@ -15,8 +15,6 @@ jobs:
           fetch-depth: '0'
       - name: Set env vars
         id: set_env
-        env:
-          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
         run: |
           VERSION=$(cat snwDistance.toc | gawk '/## Version: /' | grep -Eo "(v[0-9]+\.[0-9]+\.[0-9]+)")
           RELEASEBODY=$(awk -v RS='### Version ' '/'$VERSION':(.*)/ {print $0}' CHANGELOG.md)
@@ -25,7 +23,7 @@ jobs:
           RELEASEBODY="${RELEASEBODY//$'\r'/'%0D'}"
           echo "::set-output name=version::${VERSION}"
           echo "::set-output name=RELEASEBODY::${RELEASEBODY}"
-          echo "::set-env name=body::${RELEASEBODY}"
+          echo "body::${RELEASEBODY}" >> $GITHUB_ENV
       - name: Build
         run: |
           rsync -av --exclude='*.git*' --exclude='.github' --exclude='CHANGELOG.md' --exclude='README.md' . ./snwDistance
