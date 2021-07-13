@@ -15,6 +15,8 @@ jobs:
           fetch-depth: '0'
       - name: Set env vars
         id: set_env
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
         run: |
           VERSION=$(cat snwDistance.toc | gawk '/## Version: /' | grep -Eo "(v[0-9]+\.[0-9]+\.[0-9]+)")
           RELEASEBODY=$(awk -v RS='### Version ' '/'$VERSION':(.*)/ {print $0}' CHANGELOG.md)
