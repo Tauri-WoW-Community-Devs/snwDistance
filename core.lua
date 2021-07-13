@@ -80,8 +80,6 @@ text = frame:CreateFontString(frame, "OVERLAY", "GameFontNormalWTF2Outline")
 text:SetPoint("TOP", 0, -30)
 text:SetText('0')
 
-frame:Show()
-
 local function toggleFrame()
   if frame:IsShown() then
     frame:Hide()
