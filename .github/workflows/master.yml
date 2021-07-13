@@ -23,7 +23,6 @@ jobs:
           RELEASEBODY="${RELEASEBODY//$'\r'/'%0D'}"
           echo "::set-output name=version::${VERSION}"
           echo "::set-output name=RELEASEBODY::${RELEASEBODY}"
-          # echo "body::${RELEASEBODY}" >> $GITHUB_ENV
       - name: Build
         run: |
           rsync -av --exclude='*.git*' --exclude='.github' --exclude='CHANGELOG.md' --exclude='README.md' . ./snwDistance
