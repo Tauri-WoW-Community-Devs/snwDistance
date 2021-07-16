@@ -1,3 +1,6 @@
+### Version v0.1.2:
+- Add raidmember tracking
+
 ### Version v0.1.1:
 - Remove debug code (recurring theme)
 

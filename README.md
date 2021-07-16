@@ -1,10 +1,13 @@
 # snwDistance for 7.3.5 (tauri alpha ptr testing)
 
 
-Allows setting a position from your char
+Allows setting a position with your character and automatically calculate the distance to your current location.
+Also allows calculating distances between yourself and a groupmember in open-world.
 
-![](https://i.imgur.com/sz8rzdp.png)
+<br />
 
-## Planned:
+![](https://i.imgur.com/yQYWVkg.png)
 
-- Add ability to get the distance between yourself and a raid-/groupmember (limitation by blizzard)
+<br />
+
+**Tracking raid-/groupmember does not work in instances/battleground/arenas!**
